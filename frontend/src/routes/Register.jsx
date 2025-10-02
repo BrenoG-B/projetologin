@@ -55,7 +55,7 @@ const Register = () => {
 
          {message && {message}}
         <p >
-         Já tem uma conta? <a href="/register" >Faça Login</a>
+         Já tem uma conta? <a href="/" >Faça Login</a>
         </p>
       </div>
     </div>
