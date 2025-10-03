@@ -54,7 +54,7 @@ const Register = () => {
               required
             />
           </div>
-          <button className="w-full bg-black text-white text-lg py-2 rounded-2xl hover:bg-blue-900 transition duration-300">Cadastrar</button>
+          <button className="w-full bg-black text-white text-lg py-2 rounded-2xl hover:bg-blue-600 hover:text-yellow-500 transition duration-300">Cadastrar</button>
         </form>
 
          {<p className="mt-4 text-center text-red-500">{message}</p>}

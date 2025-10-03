@@ -39,10 +39,8 @@ const Login = () => {
   };
 
   return (
+
     <div className="flex items-center justify-center min-h-screen bg-blue-500">
-    <div>
-      <img src="../assets/Gremio_logo.svg.png" className="h-auto w-auto align-top"/>
-    </div>
       <div className="bg-amber-50 p-8 rounded-2xl shadow-md mb-6 w-full max-w-sm">
         <h2 className="text-2xl text-black-900 text-center mb-6 font-bold">Login</h2>
         <form onSubmit={handleLogin}>
