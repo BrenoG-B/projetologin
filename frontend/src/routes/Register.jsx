@@ -19,7 +19,7 @@ const Register = () => {
       // BUSCANDO A API COM A FUNÇÃO AXIOS
       const response = await axios.post("http://localhost:5001/register", {email,senha})
       setMessage(response.data.message) //apresenta uma mensagem
-      setTimeout(()=>navigate("/login"),2000);
+      setTimeout(()=>navigate("/"),2000);
     }
     catch(erro){
       setMessage(erro.response.data.message || "Erro ao registar usuário")
@@ -27,35 +27,39 @@ const Register = () => {
   };
 
   return (
-<div>
-      <div>
-        <h2>Cadastro de usuário</h2>
+    <div className="flex items-center justify-center min-h-screen bg-blue-500">
+      <img></img>
+      <div className="bg-white p-8 rounded-2xl shadow-md mb-6 w-full max-w-sm">
+        <h2 className="text-2xl text-black-900 text-center mb-6 font-bold">Cadastro de usuário</h2>
+        <h3 className="text-2x1 text-center mb-6 font-semibold hover:text-blue-800 hover:font-bold ">Tricolor Imortal</h3>
         <form onSubmit={handleRegister}>
-          <div>
-            <label>Email</label>
+          <div className="mb-4">
+            <label className="block text-black font-bold">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring focus:border-blue-300"
               required
             />
           </div>
 
-          <div>
-            <label>Senha</label>
+          <div className="mb-4">
+            <label className="block text-black font-bold">Senha</label>
             <input
               type="password"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring focus:border-blue-300"
               required
             />
           </div>
-          <button>Cadastrar</button>
+          <button className="w-full bg-black text-white text-lg py-2 rounded-2xl hover:bg-blue-900 transition duration-300">Cadastrar</button>
         </form>
 
-         {message && {message}}
-        <p >
-         Já tem uma conta? <a href="/" >Faça Login</a>
+         {<p className="mt-4 text-center text-red-500">{message}</p>}
+        <p className="mt-4 text-center" >
+         Já tem uma conta? <a href="/" className="text-blue-500 hover:underline hover:text-yellow-600" >Faça Login</a>
         </p>
       </div>
     </div>

@@ -39,38 +39,44 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-blue-400 ">
-      <div className="">
-        <h2 className="font-bold">Login</h2>
-        <form onSubmit={handleLogin} >
-          <div className="bg-blue-500">
-            <label>Email</label>
-            <input className="border flex"
+    <div className="flex items-center justify-center min-h-screen bg-blue-500">
+    <div>
+      <img src="../assets/Gremio_logo.svg.png" className="h-auto w-auto align-top"/>
+    </div>
+      <div className="bg-amber-50 p-8 rounded-2xl shadow-md mb-6 w-full max-w-sm">
+        <h2 className="text-2xl text-black-900 text-center mb-6 font-bold">Login</h2>
+        <form onSubmit={handleLogin}>
+          <div className="mb-4">
+            <label className="block text-black-950 font-bold">Email</label>
+            <input
               type="email"
               placeholder="digite seu email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+               className="w-full px-3 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring focus:border-blue-300"
               required
             />
           </div>
 
-          <div className="bg-blue-500">
-            <label>Senha</label>
-            <input className="border flex"
-              type="password"
+          <div className="mb-4">
+            <label className="block text-black-950 font-bold" >Senha</label>
+        
+            <input
+              type="passwrod"
               placeholder="digite sua senha"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring focus:border-blue-300"
               required
             />
           </div>
-          <button className="font-bold bg-blue-300 h-8 w-18 text-center ">
+          <button className="w-full bg-black text-white text-lg py-2 rounded-2xl hover:bg-blue-600 hover:text-yellow-500 transition duration-300">
             Entrar
           </button>
         </form>
-        {mensagem && <p>{mensagem}</p>}
-        <p>
-          Não tem conta ? <a href="/register">Criar Conta</a>
+        {<p className="mt-4 text-center text-red-500">{mensagem}</p>}
+        <p className="mt-4 text-center">
+          Não tem conta ? <a href="/register" className="text-yellow-900 hover:underline hover:text-yellow-600">Criar Conta</a>
         </p>
       </div>
     </div>
